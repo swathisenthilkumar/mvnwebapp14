@@ -20,15 +20,6 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Create Black Duck Policy
-      env:
-        NODE_EXTRA_CA_CERTS: ${{ secrets.LOCAL_CA_CERT_PATH }}
-      uses: blackducksoftware/create-policy-action@v0.0.1
-      with:
-        blackduck-url: ${{ secrets.BLACKDUCK_URL }}
-        blackduck-api-token: ${{ secrets.BLACKDUCK_API_TOKEN }}
-        policy-name: 'My Black Duck Policy For GitHub Actions'
-        no-fail-if-policy-exists: true
     - name: Run Synopsys Detect
       uses: synopsys-sig/detect-action@v0.3.0
       env:
@@ -36,5 +27,5 @@ jobs:
       with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           detect-version: 7.9.0
-          blackduck-url: ${{ secrets.BLACKDUCK_URL }}
+          blackduck-url: https://testing.blackduck.synopsys.com/
           blackduck-api-token: ${{ secrets.BLACKDUCK_API_TOKEN }}
