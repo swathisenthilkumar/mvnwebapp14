@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-          detectversion: 6.9.1
+          detectversion: 7.13.2
           blackduckurl: https://testing.blackduck.synopsys.com/
           blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           PROJECT: mvnwebapp1
