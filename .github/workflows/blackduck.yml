@@ -30,9 +30,9 @@ jobs:
       with:
           detect-version: 7.13.2
           scan-mode: RAPID
-          detect.tools.excluded: DETECTOR
-          blackduck.trust.cert: TRUE
-          detect.risk.report.pdf: TRUE
+          #detect.tools.excluded: DETECTOR
+          #blackduck.trust.cert: TRUE
+          #detect.risk.report.pdf: TRUE
           github-token: ${{ secrets.GITHUB_TOKEN }}
           blackduck-url: https://testing.blackduck.synopsys.com/
           blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
