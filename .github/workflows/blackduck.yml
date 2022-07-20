@@ -25,8 +25,8 @@ jobs:
       uses: blackducksoftware/github-action@2.0.0
       with:
           #no-fail-if-policy-exists: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          detect-version: 6.9.1
-          blackduck-url: https://testing.blackduck.synopsys.com/
-          blackduck-api-token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          githubtoken: ${{ secrets.GITHUB_TOKEN }}
+          detectversion: 6.9.1
+          blackduckurl: https://testing.blackduck.synopsys.com/
+          blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           
