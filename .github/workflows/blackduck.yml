@@ -36,8 +36,8 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           blackduck-url: https://testing.blackduck.synopsys.com/
           blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          detect.project.name: mvnwebapp1
-          detect.project.version.name: 1
-          #args: --detect.project.name=$PROJECT --detect.excluded.detector.types=GRADLE
+          #detect.project.name: mvnwebapp1
+          #detect.project.version.name: 1
+          args: --detect.project.name="mvnwebapp1" --detect.excluded.detector.types=GRADLE --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true -detect.project.version.name="1"
           
           
