@@ -48,4 +48,4 @@ jobs:
     #- name: Blackduck
     #  uses: actions/synopsys-detect@master
       with:
-        args: --detect.tools=SIGNATURE_SCAN --detect.project.name=$GITHUB_REPOSITORY --detect.excluded.detector.types=GRADLE --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true -detect.project.version.name="1"
+        args: --detect.tools=BINARY_SCAN --detect.project.name=$GITHUB_REPOSITORY --detect.excluded.detector.types=GRADLE --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true -detect.project.version.name="1"
