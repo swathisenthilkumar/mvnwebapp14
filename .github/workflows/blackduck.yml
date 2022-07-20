@@ -13,10 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-          detectversion: 7.13.2
-          blackduckurl: https://testing.blackduck.synopsys.com/
-          blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          PROJECT: mvnwebapp1
+          DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
+          
           
     steps:
     - uses: actions/checkout@v3
@@ -30,6 +28,11 @@ jobs:
     - name: BlackDuck Scan
       uses: blackducksoftware/github-action@v2
       with:
-          args: --detect.project.name=$PROJECT --detect.excluded.detector.types=GRADLE
+          detect-version: 7.13.2
+          scan-mode: RAPID
+          blackduck-url: https://testing.blackduck.synopsys.com/
+          blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          PROJECT: mvnwebapp1
+          #args: --detect.project.name=$PROJECT --detect.excluded.detector.types=GRADLE
           
           
