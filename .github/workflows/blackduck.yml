@@ -30,6 +30,7 @@ jobs:
       with:
           detect-version: 7.13.2
           scan-mode: RAPID
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           blackduck-url: https://testing.blackduck.synopsys.com/
           blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           PROJECT: mvnwebapp1
