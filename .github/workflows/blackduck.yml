@@ -14,7 +14,9 @@ jobs:
     
     env:
           DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
-          
+          BLACKDUCK_URL: https://testing.blackduck.synopsys.com
+          BLACKDUCK_API_TOKEN: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          PROJECT: "mvnwebapp1"
           
     steps:
     - uses: actions/checkout@v3
@@ -45,6 +47,4 @@ jobs:
     #- name: Blackduck
     #  uses: actions/synopsys-detect@master
       with:
-        blackduck-url: "https://testing.blackduck.synopsys.com"
-        blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
         args: --detect.tools=SIGNATURE_SCAN --detect.project.name=$GITHUB_REPOSITORY" --detect.project.name="mvnwebapp1" --detect.excluded.detector.types=GRADLE --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true -detect.project.version.name="1"
