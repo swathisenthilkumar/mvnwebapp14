@@ -49,9 +49,10 @@ jobs:
     #  uses: actions/synopsys-detect@master
       with:
         args: --detect.tools=BINARY_SCAN --detect.project.name=$GITHUB_REPOSITORY --detect.excluded.detector.types=GRADLE --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true -detect.project.version.name="1"
-
+      
+    - run: ls 
     - name: Upload Results
       uses: actions/upload-artifact@v2
       with:
-        name: prernagarg05_mvnwebapp1_Default_Detect_Version_BlackDuck_RiskReport.pdf
+        name: Blackduck
         path: /home/runner/work/mvnwebapp1/mvnwebapp1/
