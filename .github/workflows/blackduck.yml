@@ -42,14 +42,14 @@ jobs:
           #blackduckapitoken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           #detect.project.name: mvnwebapp1
           #detect.project.version.name: 1
-          #args: --detect.tools=SIGNATURE_SCAN --detect.excluded.detector.types=GRADLE --detect.project.name=$GITHUB_REPOSITORY" --detect.project.name="mvnwebapp1" --detect.excluded.detector.types=GRADLE --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true -detect.project.version.name="1"
+          #args: --detect.tools=SIGNATURE_SCAN --detect.excluded.detector.types=GRADLE --detect.project.name=$GITHUB_REPOSITORY" --detect.project.name="mvnwebapp1" --detect.excluded.detector.types=GRADLE --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true --detect.project.version.name="1"
           
      # The Detect block, override the arguments to configure options as required
    
     #- name: Blackduck
     #  uses: actions/synopsys-detect@master
       with:
-        args: --detect.project.name=Pipeline_test --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true
+        args: --detect.project.name=Pipeline_test --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true --detect.project.version.name=1
       
     - run: ls 
     - name: Upload Results
