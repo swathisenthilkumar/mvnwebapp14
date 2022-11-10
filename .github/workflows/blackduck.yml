@@ -18,7 +18,7 @@ jobs:
           BLACKDUCK_URL: "https://testing.blackduck.synopsys.com"
           BLACKDUCK_API_TOKEN: ${{ secrets.BLACKDUCK_API_TOKEN }}
           #PROJECT: "mvnwebapp1"
-          detect-version: "7.13.2"
+          detect-version: "7.12.1"
           
     steps:
     - uses: actions/checkout@v3
